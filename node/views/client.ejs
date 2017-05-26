@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html class="<%= klass %>">
+<head>
+    <title><%= title && title + " - " %></title>
+</head>
+<body class="<%= klass %>">
+
+            <%- body %>
+
+
+<script src="/share/partial.js"></script>
+
+<script id="_partial_box_">
+    !function() {
+        window.box = _.box(<%- box %>);
+        var _box = document.getElementById('_partial_box_');
+        _box.parentNode.removeChild(_box);
+    } ();
+</script>
+<script src="/client/js/jquery.js"></script>
+<script src="/client/js/sign.js"></script>
+
+
+</body>
+</html>
