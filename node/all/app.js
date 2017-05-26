@@ -2,7 +2,6 @@ process.env.TZ = 'Asia/Seoul';
 const express = require('express');
 const app = global.app = express();
 const bodyParser = require('body-parser');
-
 global._ = require('../../www/share/partial.js');
 
 
@@ -15,6 +14,9 @@ const moment = global.moment = require('moment-timezone');
 const session = require('express-session');
 const RedisStore = require('connect-redis')(session);
 require('../all/db/connection');
+
+
+app.set('port', process.env.PORT || 3001);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

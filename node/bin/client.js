@@ -7,9 +7,8 @@ require('../routes/all');
 require('../routes/client/sign');
 
 
-
 require('../apis/client/sign');
 
-var server = app.listen(3001, function() {
+var server = app.listen(app.get('port'), function() {
   console.log('Express server listening on port ' + server.address().port);
 });
