@@ -22,4 +22,14 @@ app.get('/abc', ___(
   '),
   _(G.$res_$klass, 'upload_test', 'upload_test'),
   G.$res_$render
-))
+));
+
+app.get('/test', ___(
+  G.$rrn,
+  _.t$('\
+  .menu\
+  .film\
+  '),
+  _(G.$res_$klass, 'test', 'test'),
+  G.$res_$render
+));

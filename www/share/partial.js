@@ -66,6 +66,7 @@
     if (!_.isFunction(_fs)) i = -1, fs = _fs;
 
     while (f = fs[++i]) {
+
       if (f._p_lzne) {
         var lazys = [];
         do lazys.push(f);
@@ -215,15 +216,21 @@
     }
   }
   function unpack_promise(res, callback) {
+    // console.log(res, 'res-===')
     var is_r = is_mr(res);
     return (function u(i, res, length, has_promise) {
       if (i == length) {
+
         has_promise && callback(is_r ? res : res[0]);
+
         return;
       }
       return thenable(res[i]) && (has_promise = true) ? (function(i) {
+        // console.log(res[1], 'res====')
         res[i].then(function(v) {
+
           res[i] = v;
+          console.log(res)
           u(i + 1, res, length, has_promise);
         });
         return true;
@@ -232,12 +239,16 @@
   }
 
   function go_async(self, v, fs, i) {
+
     var args_len = fs.length, resolve = null;
     var promise = has_promise() ? new Promise(function(rs) { resolve = rs; }) : { then: function(rs) { resolve = rs; } };
+    console.log(v, '====================');
     (function c(v) {
+
       do {
         if (i === args_len) return resolve ? resolve(fpro(v)) : setTimeout(function() { resolve && resolve(fpro(v)); }, 0);
         if (unpack_promise(v, c)) return;
+        // console.log('aa')
         if (fs[i] == __ && i++) v = __;
         if (v && v._stop) {
           i = args_len;
@@ -515,8 +526,10 @@
         result = func.apply(context, args);
         if (!timeout) context = args = null;
       } else if (!timeout && options.trailing !== false) {
+        // console.log('a')
         timeout = setTimeout(later, remaining);
       }
+      // console.log('abcde')
       return result;
     };
   };
@@ -750,9 +763,10 @@
 
     return data;
   };
-
+  // _map_async(data, iter, null, mp, 1, res);
   var _map_async = function f(data, iter, keys, mp, i, res) {
     return _.go(mp, function(val) {
+
       if (i - 1 > -1) res[i-1] = val;
       var key = keys ? keys[i] : i;
       return (keys || data).length == i ? res : f(data, iter, keys, iter(data[key], key, data), ++i, res);
@@ -764,6 +778,8 @@
     if (di) var data = di[0], iter = di[1];
     else var data = d, iter = i;
     var keys = likearr(data) ? null : _keys(data);
+
+
     if (iter._p_async || iter._p_cb) return _map_async(data, iter, keys, null, 0, []);
 
     var res = [];

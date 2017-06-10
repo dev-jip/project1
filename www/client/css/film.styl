@@ -1,0 +1,44 @@
+*
+  margin 0
+  padding 0
+  box-sizing border-box
+
+body
+  //display flex
+  //>div
+  //  flex 1
+  //>div:nth-of-type(2)
+  //  flex-grow 10
+
+
+body.card
+  .card_main
+    left 0
+    right 0
+    margin 0 auto
+    margin-top 50px
+    position relative
+    display block
+    width 520px
+    //height 2000px
+    visibility hidden
+    .card
+      width 250px
+      position absolute
+      top 0
+      left 0
+      >img
+        width 100%
+
+
+@media only screen and (min-width: 800px) {
+  body.card .card_main {width: 800px}
+}
+
+@media only screen and (min-width: 1100px) {
+  body.card .card_main {width: 1050px}
+}
+
+@media only screen and (min-width: 1400px) {
+  body.card .card_main {width: 1300px}
+}

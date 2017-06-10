@@ -1,13 +1,27 @@
 <!DOCTYPE html>
 <html class="<%= klass %>">
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title><%= title && title + " - " %></title>
+    <!--<link rel="stylesheet" href="/client/css/test.css">-->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/client/css/film.css">
 </head>
 <body class="<%= klass %>">
 
-            <%- body %>
+    <div>
 
+    </div>
+    <div>
+        <main>
+                <%- body %>
+        </main>
+    </div>
+    <div>
 
+    </div>
 <script src="/share/partial.js"></script>
 
 <script id="_partial_box_">
@@ -18,7 +32,9 @@
     } ();
 </script>
 <script src="/client/js/jquery.js"></script>
+<!--<script src="/client/js/m_query.js"></script>-->
 <script src="/client/js/sign.js"></script>
+<script src="/client/js/test.js"></script>
 
 
 </body>

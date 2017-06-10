@@ -1,27 +1,35 @@
 var _ = require('./partial');
 
-var i= 0
-var updatePosition = ()=>console.log(i++);
+// _.go(_.range(10),
+//   _.reduce((m, v)=>{
+//     return new Promise(function(resolve) {
+//       setTimeout(function(){
+//         console.log(v);
+//         resolve(m+v);
+//       }, 200);
+//     })
+//   }, 0),
+//   _.log);
+
+// new Promise(function(resolve){
+//   setTimeout(function(){
+//     resolve('1223')
+//   }, 200)
+// }).then(function(v){
+//   console.log(v)
+// })
 
 
-var throttled = _.throttle(updatePosition, 1000);
 
-throttled()
-throttled()
-throttled()
-// _.delay(throttled, 4000)
-// _.delay(throttled, 200)
-// _.delay(throttled, 600)
-// _.delay(throttled, 600)
-// _.delay(throttled, 600)
+// _.log(_.range(10).map(v=>{
+//   return $.post('/abcd', {a: 123})
 //
-// _.delay(throttled, 900)
-// _.delay(throttled, 1000)
-// _.delay(throttled, 1200)
-// _.delay(throttled, 1300)
-// _.delay(throttled, 400)
-// _.delay(throttled, 400)
-// _.delay(throttled, 400)
-// _.delay(throttled, 400)
-// _.delay(throttled, 400)
+// }))
 
+var a = _.throttle(()=>console.log('aa'), 1000, {trailing: false});
+a()
+a()
+a()
+a()
+a()
+a()

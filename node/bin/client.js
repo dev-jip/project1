@@ -5,6 +5,7 @@ require('../routes/all');
 
 
 require('../routes/client/sign');
+require('../routes/client/card');
 
 
 require('../apis/client/sign');

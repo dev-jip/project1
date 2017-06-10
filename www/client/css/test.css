@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+body >div {
+  flex: 1;
+}
+body >div:nth-of-type(2) {
+  flex-basis: 700px;
+}
+.div1,
+.div2 {
+  width: 100px;
+  border: 1px solid #000;
+  position: relative;
+  padding: 10px;
+}
+.div1 ._1,
+.div2 ._1 {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #000;
+  padding: 10px;
+}

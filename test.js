@@ -1,7 +1,6 @@
 
-_ = require('./lib')
-//
 // import _ from './lib'
+
 
 
 var arr = _.range(10000).reverse()
