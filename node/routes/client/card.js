@@ -1,6 +1,7 @@
 app.get('/card', ___(
   G.$rrn,
   _.t$('\
+  p 123123123123\
   .menu\
     .create create\
   .card_container\
